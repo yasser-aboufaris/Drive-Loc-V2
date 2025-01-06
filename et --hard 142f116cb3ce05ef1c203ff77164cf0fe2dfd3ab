@@ -1,0 +1,71 @@
+[33mcommit cbe4b4622b70d46b05f91603df09e10c42c643a7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: yasser-aboufaris <azertyasser321@gmail.com>
+Date:   Sun Jan 5 21:34:06 2025 +0100
+
+    uml and fixing some bugs
+
+[33mcommit f45fda57c23581367a116dde82b8a8b29a654c00[m
+Author: yasser-aboufaris <azertyasser321@gmail.com>
+Date:   Sun Jan 5 21:13:36 2025 +0100
+
+    debuguing the code
+
+[33mcommit 142f116cb3ce05ef1c203ff77164cf0fe2dfd3ab[m
+Author: yasser-aboufaris <azertyasser321@gmail.com>
+Date:   Sun Jan 5 14:37:00 2025 +0100
+
+    reservation dashboard and edit reservations class
+
+[33mcommit 82e19796654eff804dcb3cea06c5b26898c48c67[m
+Author: yasser-aboufaris <azertyasser321@gmail.com>
+Date:   Sun Jan 5 11:32:34 2025 +0100
+
+    read cars
+
+[33mcommit 62fa230dd788cfa4fd2c726aeda18c54cadf72e8[m
+Author: yasser-aboufaris <azertyasser321@gmail.com>
+Date:   Fri Jan 3 12:25:14 2025 +0100
+
+    autentification
+
+[33mcommit 95460ea8f9182080582ce9d4555f17d0a1e0ba1c[m
+Author: yasser-aboufaris <azertyasser321@gmail.com>
+Date:   Thu Jan 2 15:15:39 2025 +0100
+
+    fix dynamic form bug
+
+[33mcommit e8a8aad8a08b49f7601ecd5b34126adf907ab492[m
+Author: yasser-aboufaris <azertyasser321@gmail.com>
+Date:   Wed Jan 1 22:09:45 2025 +0100
+
+    working on avis class
+
+[33mcommit 4b2b17a898b5b2519d999519a3a01bbce44f8e74[m
+Author: yasser-aboufaris <azertyasser321@gmail.com>
+Date:   Wed Jan 1 21:47:27 2025 +0100
+
+    classes
+
+[33mcommit f4e3353b2c430dcb8c0637c1bd882c3d457d57fc[m
+Author: yasser-aboufaris <azertyasser321@gmail.com>
+Date:   Wed Jan 1 16:09:45 2025 +0100
+
+    create the dynamic form for adding cars by the admin
+
+[33mcommit ef2af18456518b876697f180b7ce79213e675bee[m
+Author: yasser-aboufaris <azertyasser321@gmail.com>
+Date:   Tue Dec 31 12:06:00 2024 +0100
+
+    admin resservation handling
+
+[33mcommit d539b71f39048fce4caf7ec046a10fdeb852cc0d[m
+Author: yasser-aboufaris <azertyasser321@gmail.com>
+Date:   Tue Dec 31 11:30:19 2024 +0100
+
+    autentification
+
+[33mcommit 71c33fe47ae5dfd77693b68a0c138f1338a8558d[m
+Author: yasser-aboufaris <azertyasser321@gmail.com>
+Date:   Mon Dec 30 13:00:47 2024 +0100
+
+    first commit
