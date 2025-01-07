@@ -5,7 +5,7 @@ require_once "../../classes/cars.php";
 require_once "../../classes/categories.php";
 $car = new Cars($conn);
 
-$read = new Categories($conn);
+$read = new Categories(pdo: $conn);
 
 // Initialize car object
 

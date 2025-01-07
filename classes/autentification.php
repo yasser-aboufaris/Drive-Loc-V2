@@ -10,7 +10,7 @@ class Authentification {
     public function login($email, $password) {
         
             try {
-                $qry = "SELECT id, name, password FROM users WHERE email = :email";
+                $qry = "SELECT id_user, name, password FROM users WHERE email = :email";
                 $stmt = $this->pdo->prepare($qry);
                 $stmt->bindParam(":email", $email);
                 $stmt->execute();
@@ -19,10 +19,19 @@ class Authentification {
 
                 if ($user && password_verify($password, $user["password"])) {
                     session_start();
-                    $_SESSION["user_id"] = $user["id"];
+                    $id_user=$user["id_user"];
+                    $_SESSION["user_id"] = $user["id_user"];
                     $_SESSION["user_name"] = $user["name"];
                     $_SESSION["user_email"] = $email;
-                    header("Location: signup.php");
+                    $qry = "SELECT * FROM role WHERE id_user = :id_user";
+                    $stmt2=$this->pdo->prepare($qry);
+                    $stmt2->bindParam(":id_user", $id_user);
+                    $stmt2->execute();
+                    $role= $stmt->fetch(PDO::FETCH_ASSOC);
+
+                    $_SESSION["role"]=$role["role"];
+                    header('Location: ../clienVue/home.php');
+
                     exit;
                 } else {
                     echo "Invalid email or password. Please try again.";

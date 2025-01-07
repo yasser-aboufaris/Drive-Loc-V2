@@ -22,7 +22,7 @@
             Log In to Your Account
         </h2>
 
-        <form action="#" method="POST" class="space-y-5">
+        <form action="loginMethod.php" method="POST" class="space-y-5">
             <!-- Email Field -->
             <div>
                 <label for="email" class="block text-lg font-medium text-gray-700">Email Address</label>
@@ -47,7 +47,7 @@
         </form>
 
         <div class="mt-4 text-center">
-            <p class="text-lg text-gray-600">Don't have an account? <a href="signup.html"
+            <p class="text-lg text-gray-600">Don't have an account? <a href=""
                     class="text-blue-600 font-semibold hover:text-blue-700"><a href="login.php">Sign Up</a></p>
         </div>
     </div>
