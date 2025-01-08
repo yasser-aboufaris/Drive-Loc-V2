@@ -6,26 +6,27 @@ class Posts {
         $this->pdo = $pdo;
     }
 
-    public function create( $id_post, $id_user ,$title ,$content , $description) {
-        if (empty($id_client) || empty($post_day) || empty($title) || empty($description) || empty($content)) {
+    public function create($id_user, $title, $content, $description, $id_theme) {
+        // Validate required fields
+        if (empty($id_user) || empty($title) || empty($content) || empty($description) || empty($id_theme)) {
             return false;
         }
-
-        $query = "INSERT INTO posts (id_post, id_user, title,content,status ,description) 
-        VALUES (:id_post, :id_user, :, :title,:content,'waiting',:description)";
+    
+        $query = "INSERT INTO post (id_user, title, content, id_theme, status, description) 
+                VALUES (:id_user, :title, :content, :id_theme, 'waiting', :description)";
         
         try {
             $stmt = $this->pdo->prepare($query);
             
-            $stmt->bindParam(":id_post", $id_post);
             $stmt->bindParam(":id_user", $id_user);
             $stmt->bindParam(":title", $title);
             $stmt->bindParam(":content", $content);
-            $stmt->binndParam(":description",$description);
+            $stmt->bindParam(":id_theme", $id_theme);
+            $stmt->bindParam(":description", $description);
             
             return $stmt->execute();
         } catch (PDOException $e) {
-            echo "Error creating reservation: " . $e->getMessage();
+            error_log("Error creating post: " . $e->getMessage());
             return false;
         }
     }
@@ -108,6 +109,23 @@ class Posts {
     }
 
     public function ReadByTheme($id_theme) {
+        try {
+            $query = "SELECT * FROM post where id_theme = :id_theme";
+            $stmt = $this->pdo->prepare($query);
+            $stmt->bindParam(":id_theme", $id_theme);
+
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        } catch (PDOException $e) {
+            echo "Error reading reservations: " . $e->getMessage();
+            return false;
+        }
+    }
+
+
+
+    public function ($id_theme) {
         try {
             $query = "SELECT * FROM post where id_theme = :id_theme";
             $stmt = $this->pdo->prepare($query);

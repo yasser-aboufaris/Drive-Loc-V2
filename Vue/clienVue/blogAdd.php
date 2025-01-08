@@ -20,9 +20,11 @@
           <li class="mb-2">
             <a href="#" class="block p-3 rounded-lg hover:bg-blue-800">Users</a>
           </li>
+
           <li class="mb-2">
             <a href="#" class="block p-3 rounded-lg hover:bg-blue-800">Reports</a>
           </li>
+          
           <li class="mb-2">
             <a href="#" class="block p-3 rounded-lg hover:bg-blue-800">Settings</a>
           </li>
