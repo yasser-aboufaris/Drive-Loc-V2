@@ -106,6 +106,21 @@ class Posts {
             return false;
         }
     }
+
+    public function ReadByTheme($id_theme) {
+        try {
+            $query = "SELECT * FROM post where id_theme = :id_theme";
+            $stmt = $this->pdo->prepare($query);
+            $stmt->bindParam(":id_theme", $id_theme);
+
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        } catch (PDOException $e) {
+            echo "Error reading reservations: " . $e->getMessage();
+            return false;
+        }
+    }
     
 
 }
