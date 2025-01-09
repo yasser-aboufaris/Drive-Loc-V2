@@ -1,6 +1,8 @@
 <?php 
 include "../../classes/conn.php";
 include "../../classes/themes.php";
+session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +21,7 @@ include "../../classes/themes.php";
             <div class="absolute left-1/2 transform -translate-x-1/2 top-6 w-64 h-px bg-gradient-to-r from-transparent via-stone-400 to-transparent"></div>
             <div class="absolute left-1/2 transform -translate-x-1/2 bottom-6 w-64 h-px bg-gradient-to-r from-transparent via-stone-400 to-transparent"></div>
             
-            <h1 class="font-serif text-5xl text-stone-800 tracking-wide">The Literary Haven</h1>
-            <p class="mt-4 text-xl text-stone-600 italic font-serif">"Where Words Dance with Imagination"</p>
+  
         </div>
     </header>
 

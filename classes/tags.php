@@ -7,17 +7,17 @@ private $pdo;
     }
     
 
-    public  function addPostTags( $post_id, $tag_ids) {
+    public function addPostTags($post_id, $tag_ids) {
         $query = "INSERT INTO post_tags (id_post, id_tag) VALUES (:post_id, :tag_id)";
         $stmt = $this->pdo->prepare($query);
-        
-        // Loop through the indexed array
-        foreach ($tag_ids as $id => $value) {
+    
+        foreach ($tag_ids as $id) {
             $stmt->bindParam(":post_id", $post_id);
             $stmt->bindParam(":tag_id", $id);
             $stmt->execute();
         }
     }
+    
     public  function read() {
         $query = "select * from tags";
         $stmt = $this->pdo->prepare($query);
@@ -28,14 +28,15 @@ private $pdo;
     public function deleteTag($id_tag) {
         $query = "DELETE FROM tags WHERE id_tag = ?";
         $stmt = $this->pdo->prepare($query);
-        $stmt->execute($id_tag);
+        $stmt->bindParam(":tag_id", $id_tag);
+        $stmt->execute();
     }
 
 
     function updateTag($tag_name,$id_tag) {
         $query = "UPDATE tags SET tag_name = ? WHERE id_tag = ?";
         $stmt = $this->pdo->prepare($query);
-        $stmt->bindParam(":")
+        $stmt->bindParam(":tag_name",);
     }
 
     
