@@ -9,4 +9,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $email = $_POST['email'];
         $password = $_POST['password'];
         $login->login($email , password: $password);
+        header()
 }

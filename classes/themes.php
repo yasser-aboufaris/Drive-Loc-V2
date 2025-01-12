@@ -1,5 +1,5 @@
 <?php
-class themes {
+class Themes {  // Class names should be capitalized by convention
     private $pdo;
 
     public function __construct($pdo) {
@@ -7,23 +7,59 @@ class themes {
     }
 
     public function read() {
-    
-        $qry = "SELECT * FROM theme";
-        $stmt = $this->pdo->prepare($qry);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        try {
+            $qry = "SELECT * FROM theme";
+            $stmt = $this->pdo->prepare($qry);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            // Handle or log error
+            return false;
+        }
+    }
 
-}
+    public function create($theme, $description) {
+        try {
+            $qry = "INSERT INTO theme (theme, description) 
+                    VALUES (:theme, :description)";
+            $stmt = $this->pdo->prepare($qry);
+            $stmt->bindParam(":theme", $theme);
+            $stmt->bindParam(":description", $description);
+            
+            $stmt->execute();
 
-    public function create( $theme,$description) {
-        $qry = "INSERT INTO themes (
-        theme,description) VALUES ( :theme,:description)";
-        $stmt = $this->pdo->prepare($qry);
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
 
-        $stmt->bindParam(":theme", $theme);
-        $stmt->bindParam(":description", $description);
-        $stmt->execute();
-        echo "Category created successfully.";
+    public function update($id, $theme, $description) {
+        try {
+            $qry = "UPDATE theme 
+                    SET theme = :theme, 
+                        description = :description 
+                    WHERE id_theme = :id";
+                    
+            $stmt = $this->pdo->prepare($qry);
+            $stmt->bindParam(":id", $id);
+            $stmt->bindParam(":theme", $theme);
+            $stmt->bindParam(":description", $description);
+            
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
+    public function delete($id) {
+        try {
+            $qry = "DELETE FROM theme WHERE id_theme = :id";
+            $stmt = $this->pdo->prepare($qry);
+            $stmt->bindParam(":id", $id);
+            
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            return false;
+        }
     }
 }
-
